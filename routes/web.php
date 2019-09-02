@@ -15,3 +15,8 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/about', function () {
+    $nama = 'Muhammad Ardiansyah';
+    return view('about', ['nama' => $nama]);
+});
