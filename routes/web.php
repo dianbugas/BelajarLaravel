@@ -19,7 +19,7 @@
 // Route::get('/about', function () {
 //     $nama = 'Muhammad Ardiansyah';
 //     return view('about', ['nama' => $nama]);
-
+// });
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
-// });
+Route::get('/mahasiswa', 'MahasiswaController@index');
