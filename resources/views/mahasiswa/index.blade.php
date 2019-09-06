@@ -19,12 +19,15 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <th scope="row">1asd</th>
-                        <th scope="row">1asd</th>
-                        <th scope="row">1dasd</th>
-                        <th scope="row">1dasd</th>
-                        <th scope="row">1dasdasd</th>
+                        <th>1</th>
+                        <td>1asd</td>
+                        <td>1asd</td>
+                        <td>1dasd</td>
+                        <td>1dasd</td>
+                        <td>
+                            <a href="" class="badge badge-success">edit</a>
+                            <a href="" class="badge badge-danger">delete</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
