@@ -18,9 +18,10 @@
                     <th scope="col">Aksi</th>
                 </thead>
                 <tbody>
+                    @foreach($mahasiswa as $mhs)
                     <tr>
                         <th>1</th>
-                        <td>1asd</td>
+                        <td>1asadasdsad</td>
                         <td>1asd</td>
                         <td>1dasd</td>
                         <td>1dasd</td>
@@ -29,6 +30,7 @@
                             <a href="" class="badge badge-danger">delete</a>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
