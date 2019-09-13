@@ -20,11 +20,11 @@
                 <tbody>
                     @foreach($mahasiswa as $mhs)
                     <tr>
-                        <th>1</th>
-                        <td>1asadasdsad</td>
-                        <td>1asd</td>
-                        <td>1dasd</td>
-                        <td>1dasd</td>
+                        <th scope="row">1</th>
+                        <td>{{$mhs->nama}}</td>
+                        <td>{{$mhs->nrp}}</td>
+                        <td>{{$mhs->email}}</td>
+                        <td>{{$mhs->jurusan}}</td>
                         <td>
                             <a href="" class="badge badge-success">edit</a>
                             <a href="" class="badge badge-danger">delete</a>
