@@ -19,5 +19,5 @@ Route::get('/mahasiswa', 'MahasiswaController@index');
 Route::get('/students', 'StudentsController@index');
 Route::get('/students/create', 'StudentsController@create');
 Route::get('/students/{student}', 'StudentsController@show');
-Route::post('/students', 'StudentsController@index');
-
+Route::post('/students', 'StudentsController@store');
+Route::delete('/students/{student}', 'StudentsController@destroy'); //supaya tidak bisa di hapus lewat url... dan harus di hapus via button yang telah di buat didalam viewnya

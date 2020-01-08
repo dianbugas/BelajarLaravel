@@ -12,7 +12,11 @@
                   <p class="card-text"><?php echo e($student->email); ?></p>
                   <p class="card-text"><?php echo e($student->jurusan); ?></p>
                   <button type="submit" class="btn btn-primary">Edit</button>
-                  <button type="submit" class="btn btn-danger">Delete</button>
+                  <form action="<?php echo e($student->id); ?>" method="post" class="d-inline">
+                    <?php echo method_field('delete'); ?>
+                    <?php echo csrf_field(); ?>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
                   <a href="/students" class="card-link">Kembali</a>
                 </div>
               </div>

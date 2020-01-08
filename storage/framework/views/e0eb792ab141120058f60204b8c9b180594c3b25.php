@@ -6,7 +6,12 @@
         <div class="col-6">
             <h1 class="mt-2">Daftar Students</h1>
             <a href="/students/create" class="btn btn-primary my-3">Tambah Data</a>
+            <?php if(session('status')): ?>
+                <div class="alert alert-success">
+                    <?php echo e(session('status')); ?>
 
+                </div>
+            <?php endif; ?>
             <ul class="list-group">
                 <?php $__currentLoopData = $students; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $std): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>    
                 <li class="list-group-item d-flex justify-content-between align-items-center">
