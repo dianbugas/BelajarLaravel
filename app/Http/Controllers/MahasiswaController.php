@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Student;
 
 class MahasiswaController extends Controller
 {
@@ -14,8 +15,9 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $mahasiswa = DB::table('mahasiswa')->get(); //masih error
-        return view('mahasiswa.index');
+        //$mahasiswa = DB::table('students')->get();
+        $mahasiswa = Student::all();
+        return view('mahasiswa.index', ['mahasiswa' => $mahasiswa]);
     }
 
     /**
@@ -45,9 +47,18 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        // $posts = \DB::table('posts')->where('slug', $slug)->first();
+        // dd($posts);
+
+        // if(! array_key_exists($post, $posts)){
+        //     about(404, 'data yang di cari tidak aada');
+        // }
+
+        // return view('post')->with([
+        //     'post' => $posts[$post]
+        // ]);
     }
 
     /**

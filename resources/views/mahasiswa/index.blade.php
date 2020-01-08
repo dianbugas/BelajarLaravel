@@ -1,39 +1,39 @@
-<!-- bisa pakai titik atau sles -->
 @extends('layout.main')
-
-@section('title', 'Daftar Mahasiswa')
-
+@section('title', 'Daftar Beastudi')
+    
 @section('container')
 <div class="container">
     <div class="row">
         <div class="col-10">
-            <h1 class="mt-3">Daftar Mahasiswa</h1>
+            <h1 class="mt-2">Selamat Datang Bos ss</h1>
             <table class="table">
                 <thead class="thead-dark">
-                    <th scope="col">#</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">NRP</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Jurusan</th>
-                    <th scope="col">Aksi</th>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">NIP</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Jurusan</th>
+                        <th scope="col">Aksi</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    @foreach($mahasiswa as $mhs)
+                    @foreach ($mahasiswa as $mhs)
                     <tr>
-                        <th scope="row">1</th>
-                        <td>{{$mhs->nama}}</td>
-                        <td>{{$mhs->nrp}}</td>
-                        <td>{{$mhs->email}}</td>
-                        <td>{{$mhs->jurusan}}</td>
+                        <th scope="row">{{  $loop->iteration }}</th>
+                        <td>{{ $mhs->nama }}</td>
+                        <td>{{ $mhs->nrp }}</td>
+                        <td>{{ $mhs->email }}</td>
+                        <td>{{ $mhs->jurusan }}</td>
                         <td>
                             <a href="" class="badge badge-success">edit</a>
                             <a href="" class="badge badge-danger">delete</a>
                         </td>
-                    </tr>
+                    </tr>              
                     @endforeach
                 </tbody>
             </table>
         </div>
     </div>
-</div>
+</div>    
 @endsection
