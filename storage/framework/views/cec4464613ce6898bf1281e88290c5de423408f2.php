@@ -11,8 +11,8 @@
                   <h6 class="card-subtitle mb-2 text-muted"><?php echo e($student->nrp); ?></h6>
                   <p class="card-text"><?php echo e($student->email); ?></p>
                   <p class="card-text"><?php echo e($student->jurusan); ?></p>
-                  <button type="submit" class="btn btn-primary">Edit</button>
-                  <form action="<?php echo e($student->id); ?>" method="post" class="d-inline">
+                  <a href="<?php echo e($student->id); ?>/edit" class="btn btn-primary">Edit</a>
+                  <form action="/students/<?php echo e($student->id); ?>" method="post" class="d-inline">
                     <?php echo method_field('delete'); ?>
                     <?php echo csrf_field(); ?>
                     <button type="submit" class="btn btn-danger">Delete</button>

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Student extends Model
 {
@@ -10,6 +11,7 @@ class Student extends Model
     // maka kita mengambil dengan cara
     //protected $table = 'mahasiswa';
     //dan masih banyak lagi yang lainnya
-
-    protected $fillable = ['nama','nrp','email','jurusan']; //klu yg guarded itu ga boleh di isi secara manual. contohnya id
+    use SoftDeletes;
+    //klu yg guarded itu ga boleh di isi secara manual. contohnya id
+    protected $fillable = ['nama','nrp','email','jurusan'];
 }

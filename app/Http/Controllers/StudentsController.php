@@ -94,7 +94,7 @@ class StudentsController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        return view('students.edit', compact('student'));
     }
 
     /**
@@ -104,9 +104,23 @@ class StudentsController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, Student $student)  //yg pertama data baru dan yg kedua data lama
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'nrp' => 'required|size:9',
+            'email' => 'required',
+            'jurusan' => 'required'
+        ]);
+            
+        Student::where('id', $student->id)
+                ->update([
+                    'nama' => $request->nama,
+                    'nrp' => $request->nrp,
+                    'email' => $request->email,
+                    'jurusan' => $request->jurusan
+                ]);
+                return redirect('/students')->with('status', 'Data Mahasiswa Berhasil Diubah!');
     }
 
     /**
