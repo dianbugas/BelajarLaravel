@@ -11,9 +11,9 @@
 |
 */
 
-// Route::get('/', 'PagesController@home');
-// Route::get('/about', 'PagesController@about');
-// Route::get('/mahasiswa', 'MahasiswaController@index');
+Route::get('/', 'PagesController@home');
+Route::get('/about', 'PagesController@about');
+Route::get('/mahasiswa', 'MahasiswaController@index');
 
 //Students
 // Route::get('/students', 'StudentsController@index');
@@ -25,4 +25,4 @@
 // Route::patch('/students/{student}', 'StudentsController@update');
 
 //semua baris student di atas maka dapat diganti dgn 
-Route::resource('students', 'StudentsController');
+Route::resource('/students', 'StudentsController');
