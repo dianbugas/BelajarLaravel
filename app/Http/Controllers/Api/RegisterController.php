@@ -11,7 +11,7 @@ class RegisterController extends Controller
     //fungsi untuk register
     public function action(Request $request){
         $this->validate($request, [
-            'name' => 'required|min:3',
+            'name' => 'required|min:3',  
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8'
         ]);
@@ -21,6 +21,11 @@ class RegisterController extends Controller
             'password' => bcrypt($request->password),
             'api_token' => Str::random(80), 
         ]);
-        return new UserResource($user);//datanya kita pasing
+        return (new UserResource($user))->additional([
+            'meta' => [
+                'token' => $user->api_token,
+            ],
+        ]);//datanya kita pasing
     }
 }
+ 
