@@ -45,11 +45,11 @@ class StudentsController extends Controller
 
 
 
-    // $student->save();
+        // $student->save();
 
         // return redirect('/students');
-        
-        
+
+
         //cara yang ke dua
 
         // Student::create([
@@ -58,12 +58,12 @@ class StudentsController extends Controller
         //     'email' => $request->email,
         //     'jurusan' => $request->jurusan
         // ]);
-        
+
         // return redirect('/students');
-        
-        
+
+
         //cara ke tiga
-        //validation 
+        //validation
         $request->validate([
             'nama' => 'required',
             'nrp' => 'required|size:9',
@@ -72,7 +72,7 @@ class StudentsController extends Controller
         ]);
 
         Student::create($request->all());
-        return redirect('/students')->with('status','Data Mahasiswa Berhasil Ditambahkan!');
+        return redirect('/students')->with('status', 'Data Mahasiswa Berhasil Ditambahkan!');
     }
 
     /**
@@ -112,15 +112,15 @@ class StudentsController extends Controller
             'email' => 'required',
             'jurusan' => 'required'
         ]);
-            
+
         Student::where('id', $student->id)
-                ->update([
-                    'nama' => $request->nama,
-                    'nrp' => $request->nrp,
-                    'email' => $request->email,
-                    'jurusan' => $request->jurusan
-                ]);
-                return redirect('/students')->with('status', 'Data Mahasiswa Berhasil Diubah!');
+            ->update([
+                'nama' => $request->nama,
+                'nrp' => $request->nrp,
+                'email' => $request->email,
+                'jurusan' => $request->jurusan
+            ]);
+        return redirect('/students')->with('status', 'Data Mahasiswa Berhasil Diubah!');
     }
 
     /**
